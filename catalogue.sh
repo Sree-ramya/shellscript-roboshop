@@ -5,6 +5,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+MONGDB_HOST=mongodb.ramya.website
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
@@ -92,6 +93,6 @@ dnf install mongodb-org-shell -y
 
 VALIDATE $? "Installing MongoDB client"
 
-mongo --host mongodb.ramya.website </app/schema/catalogue.js &>> $LOGFILE
+mongo --host $MONGDB_HOST </app/schema/catalogue.js &>> $LOGFILE
 
 VALIDATE $? "Loading catalouge data into MongoDB"
