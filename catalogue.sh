@@ -87,6 +87,6 @@ dnf install mongodb-org-shell -y
 
 VALIDATE $? "Installing MongoDB client"
 
-mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js &>> $LOGFILE
+mongo --host mongodb.ramya.website </app/schema/catalogue.js &>> $LOGFILE
 
 VALIDATE $? "Loading catalouge data into MongoDB"
