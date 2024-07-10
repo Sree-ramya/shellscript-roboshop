@@ -45,7 +45,7 @@ systemctl start mongod
 
 VALIDATE $? "starting MongoDB"
 
-sed -i 's/12.0.0.1/0.0.0.0/g' /etc/mongod.conf
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
 
 VALIDATE $? "changes made in the mongod.conf"
 
